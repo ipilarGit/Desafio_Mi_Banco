@@ -1,0 +1,35 @@
+Para la solucion de este desafio se necesito la creacion de una
+base de datos llamada banco, la creacion de las tablas transacciones
+y cuentas.
+
+CREATE DATABASE banco;
+
+banco=# CREATE TABLE cuentas (id INT PRIMARY KEY, saldo DECIMAL CHECK(saldo>=0));
+banco=# CREATE TABLE transacciones (descripcion VARCHAR(50), fecha TIMESTAMP, monto DECIMAL, cuenta INT);
+
+Para ejecutar este programa debes escribir por consola los siguienmtes comandos:
+
+1) Si se desea registrar una nueva transaccion se debe escribir:
+
+$node index.js nuevo <descripcion> <cuenta_origen> <cuenta_destino> <monto>
+
+<descripcion>: hace referencia a una pequeña descripcion de la transaccion.
+<cuenta_origen> : indica el numero de id de la cuenta origen
+<cuenta_destino> : indica el numero de id de la cuenta destino
+<monto> : monto de la operacion
+
+2) Si se desea registrar una nueva cuenta se debe escribir:
+
+$node index.js cuenta <id_cuenta> <saldo>
+<id_cuenta>: indica el numero de la cuenta
+<saldo>: indica un valor predefinido para la cuenta ingresada.
+ 
+3) Si se desea consultar una transaccion se debe escribir:
+
+$node index.js consulta <id_cuenta>
+<id_cuenta>: indica el numero de la cuenta
+
+4) Si se desa consultar el saldo de una cuenta se debe escribir:
+
+$node index.js saldo <id_cuenta>
+<id_cuenta>: indica el numero de la cuenta
